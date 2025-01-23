@@ -35,5 +35,6 @@ services:
       - GF_DASHBOARDS_JSON_ENABLED=true
     restart: unless-stopped
 
+
 volumes:
   grafana_data:
