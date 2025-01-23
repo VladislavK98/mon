@@ -2,6 +2,10 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'hv10'
+  - job_name: 'Servers Volh'
     static_configs:
-      - targets: ['10.11.10.212:9182']
+      - targets: 
+          - '10.11.10.212:9182'
+          - '10.11.10.66:9182'
+        labels:
+          environment: 'production'
