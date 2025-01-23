@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.39.0
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    container_name: prometheus
+    hostname: prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:9.4.0
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/dashboards/windows_exporter_dashboard.json:/var/lib/grafana/dashboards/windows_exporter_dashboard.json
+      - ./grafana/config/grafana.ini:/etc/grafana/grafana.ini
+    depends_on:
+      - prometheus
+    hostname: grafana
+    environment:
+      - GF_PROVISIONING_ENABLED=true
+      - GF_PROVISIONING_DASHBOARDS_ENABLED=true
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_DASHBOARDS_JSON_PATH=/etc/grafana/provisioning/dashboards
+      - GF_DASHBOARDS_JSON_ENABLED=true
+    restart: unless-stopped
+
+volumes:
+  grafana_data:
