@@ -1,59 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DMonitoringWindowsServer",
-      "label": "Prometheus",
-      "description": "Prometheus",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "bargauge",
-      "name": "Bar gauge",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "9.5.1"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph (old)",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "table-old",
-      "name": "Table (old)",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -66,6 +11,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
@@ -75,7 +26,6 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 20763,
   "graphTooltip": 1,
-  "id": null,
   "links": [
     {
       "asDropdown": true,
@@ -539,6 +489,74 @@
       "type": "table-old"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 59,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFF03980003518EA"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "round(windows_os_users / 4 - 4, 1)",
+          "format": "heatmap",
+          "instant": true,
+          "legendFormat": "{{instance}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Users",
+      "type": "stat"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -560,7 +578,7 @@
         "h": 6,
         "w": 5,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "id": 47,
@@ -668,7 +686,7 @@
         "h": 6,
         "w": 5,
         "x": 5,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -774,7 +792,7 @@
         "h": 6,
         "w": 5,
         "x": 10,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -928,7 +946,7 @@
         "h": 6,
         "w": 5,
         "x": 15,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1083,7 +1101,7 @@
         "h": 6,
         "w": 4,
         "x": 20,
-        "y": 7
+        "y": 13
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1226,7 +1244,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 19
       },
       "id": 43,
       "panels": [],
@@ -1286,7 +1304,7 @@
         "h": 2,
         "w": 2,
         "x": 0,
-        "y": 14
+        "y": 20
       },
       "id": 33,
       "interval": "",
@@ -1372,7 +1390,7 @@
         "h": 3,
         "w": 2,
         "x": 2,
-        "y": 14
+        "y": 20
       },
       "id": 19,
       "links": [],
@@ -1445,7 +1463,7 @@
         "h": 6,
         "w": 6,
         "x": 4,
-        "y": 14
+        "y": 20
       },
       "id": 23,
       "links": [],
@@ -1505,7 +1523,7 @@
         "h": 6,
         "w": 7,
         "x": 10,
-        "y": 14
+        "y": 20
       },
       "hiddenSeries": false,
       "id": 7,
@@ -1623,7 +1641,7 @@
         "h": 6,
         "w": 7,
         "x": 17,
-        "y": 14
+        "y": 20
       },
       "hiddenSeries": false,
       "id": 27,
@@ -1734,8 +1752,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1751,7 +1768,7 @@
         "h": 2,
         "w": 2,
         "x": 0,
-        "y": 16
+        "y": 22
       },
       "id": 35,
       "interval": "",
@@ -1771,7 +1788,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "repeat": "host",
       "repeatDirection": "v",
       "targets": [
@@ -1819,8 +1836,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46",
-                "value": null
+                "color": "#299c46"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1840,7 +1856,7 @@
         "h": 3,
         "w": 2,
         "x": 2,
-        "y": 17
+        "y": 23
       },
       "id": 21,
       "links": [],
@@ -1857,7 +1873,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "targets": [
         {
           "datasource": {
@@ -1899,8 +1915,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1916,7 +1931,7 @@
         "h": 2,
         "w": 2,
         "x": 0,
-        "y": 18
+        "y": 24
       },
       "id": 37,
       "interval": "",
@@ -1936,7 +1951,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "repeat": "host",
       "repeatDirection": "v",
       "targets": [
@@ -1979,7 +1994,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 20
+        "y": 26
       },
       "hiddenSeries": false,
       "id": 25,
@@ -2005,7 +2020,7 @@
       },
       "paceLength": 10,
       "percentage": false,
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2088,7 +2103,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 20
+        "y": 26
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2112,7 +2127,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2288,7 +2303,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 20
+        "y": 26
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2312,7 +2327,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.1",
+      "pluginVersion": "9.4.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2446,7 +2461,7 @@
         "h": 8,
         "w": 8,
         "x": 0,
-        "y": 28
+        "y": 34
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2598,7 +2613,7 @@
         "h": 8,
         "w": 8,
         "x": 8,
-        "y": 28
+        "y": 34
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2747,7 +2762,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 28
+        "y": 34
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2897,7 +2912,7 @@
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 36
+        "y": 42
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2996,7 +3011,7 @@
         "h": 6,
         "w": 6,
         "x": 6,
-        "y": 36
+        "y": 42
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3151,7 +3166,7 @@
         "h": 6,
         "w": 6,
         "x": 12,
-        "y": 36
+        "y": 42
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3270,7 +3285,7 @@
         "h": 6,
         "w": 6,
         "x": 18,
-        "y": 36
+        "y": 42
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3370,6 +3385,7 @@
     }
   ],
   "refresh": "",
+  "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -3379,7 +3395,11 @@
   "templating": {
     "list": [
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "Servers",
+          "value": "Servers"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "MonitoringWindowsServer"
@@ -3391,7 +3411,10 @@
         "multi": false,
         "name": "job",
         "options": [],
-        "query": "label_values(windows_cs_hostname, job)",
+        "query": {
+          "query": "label_values(windows_cs_hostname, job)",
+          "refId": "MonitoringWindowsServer-job-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3402,7 +3425,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "MonitoringWindowsServer"
@@ -3414,7 +3441,10 @@
         "multi": false,
         "name": "hostname",
         "options": [],
-        "query": "label_values(windows_cs_hostname{job=~\"$job\"}, hostname)",
+        "query": {
+          "query": "label_values(windows_cs_hostname{job=~\"$job\"}, hostname)",
+          "refId": "MonitoringWindowsServer-hostname-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3425,7 +3455,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "10.11.10.212:9182",
+          "value": "10.11.10.212:9182"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "MonitoringWindowsServer"
@@ -3437,7 +3471,10 @@
         "multi": false,
         "name": "instance",
         "options": [],
-        "query": "label_values(windows_cs_hostname{job=~\"$job\",hostname=~\"$hostname\"}, instance)",
+        "query": {
+          "query": "label_values(windows_cs_hostname{job=~\"$job\",hostname=~\"$hostname\"}, instance)",
+          "refId": "MonitoringWindowsServer-instance-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3448,7 +3485,11 @@
         "useTags": false
       },
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": "hv10",
+          "value": "hv10"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "MonitoringWindowsServer"
@@ -3460,7 +3501,10 @@
         "multi": false,
         "name": "show_hostname",
         "options": [],
-        "query": "label_values(windows_cs_hostname{job=~\"$job\",instance=~\"$instance\"}, hostname)",
+        "query": {
+          "query": "label_values(windows_cs_hostname{job=~\"$job\",instance=~\"$instance\"}, hostname)",
+          "refId": "MonitoringWindowsServer-show_hostname-Variable-Query"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3503,6 +3547,6 @@
   "timezone": "",
   "title": "Windows Exporter Dashboard 2024",
   "uid": "Kdh0OoSGz",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }

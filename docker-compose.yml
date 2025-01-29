@@ -2,8 +2,9 @@ version: '3.8'
 
 services:
   prometheus:
-    image: prom/prometheus:v2.39.0
+    image: prom/prometheus:v3.0.1
     volumes:
+      - ./prometheus/alerts.yml:/etc/prometheus/alerts.yml
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     container_name: prometheus
     hostname: prometheus
@@ -14,7 +15,7 @@ services:
     restart: unless-stopped
 
   grafana:
-    image: grafana/grafana:9.4.0
+    image: grafana/grafana:9.5.1
     ports:
       - "3000:3000"
     volumes:
@@ -34,7 +35,6 @@ services:
       - GF_DASHBOARDS_JSON_PATH=/etc/grafana/provisioning/dashboards
       - GF_DASHBOARDS_JSON_ENABLED=true
     restart: unless-stopped
-
 
 volumes:
   grafana_data:
