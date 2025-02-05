@@ -5,8 +5,12 @@ scrape_configs:
   - job_name: 'Servers'
     static_configs:
       - targets:
-          - '10.11.10.212:9182'
+          - 'terminal2:9182'
           - '10.11.10.66:9182'
-          - '10.10.10.107:9182'
+          - 'srv1czup:9182'
+          - 'hv10:9182'
+          - 'db:9182'
+          - 'db2:9182'
+          - 'srv1c:9182'
         labels:
           environment: 'production'

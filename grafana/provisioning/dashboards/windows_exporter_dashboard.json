@@ -67,11 +67,12 @@
       "columns": [],
       "datasource": {
         "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
+        "uid": "PBFF03980003518EA"
       },
-      "fontSize": "80%",
+      "description": "",
+      "fontSize": "120%",
       "gridPos": {
-        "h": 6,
+        "h": 10,
         "w": 24,
         "x": 0,
         "y": 1
@@ -79,8 +80,7 @@
       "id": 45,
       "showHeader": true,
       "sort": {
-        "col": 0,
-        "desc": true
+        "desc": false
       },
       "styles": [
         {
@@ -94,23 +94,24 @@
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
+          "link": false,
           "mappingType": 1,
           "pattern": "product",
           "preserveFormat": false,
           "sanitize": false,
           "thresholds": [],
-          "type": "string",
+          "type": "hidden",
           "unit": "short",
           "valueMaps": []
         },
         {
           "$$hashKey": "object:1570",
-          "alias": "hostname",
+          "alias": "Сервер",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -126,16 +127,16 @@
         },
         {
           "$$hashKey": "object:1609",
-          "alias": "instance",
-          "align": "auto",
+          "alias": "IP",
+          "align": "",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
-          "link": true,
+          "link": false,
           "linkTargetBlank": false,
           "linkTooltip": "${__cell_4}",
           "linkUrl": "/d/Kdh0OoSGz/?var-job=${__cell_5}&var-hostname=All&var-instance=${__cell_4}",
@@ -150,9 +151,9 @@
           "alias": "CPU Cores",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -164,12 +165,12 @@
         },
         {
           "$$hashKey": "object:1635",
-          "alias": "Total Memory",
+          "alias": "Всего ОЗУ",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "mappingType": 1,
@@ -184,9 +185,9 @@
           "align": "auto",
           "colorMode": "cell",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "mappingType": 1,
@@ -200,13 +201,13 @@
         },
         {
           "$$hashKey": "object:1809",
-          "alias": "C Disk Utilization",
+          "alias": "Диск C %",
           "align": "auto",
           "colorMode": "cell",
           "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
+            "#37872D",
+            "#FA6400",
+            "#C4162A"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -221,13 +222,13 @@
         },
         {
           "$$hashKey": "object:1821",
-          "alias": "Partitions Usage %",
+          "alias": "Всего дисков %",
           "align": "auto",
           "colorMode": "cell",
           "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
+            "#37872D",
+            "#FA6400",
+            "#C4162A"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -245,7 +246,7 @@
           "alias": "Number of Processes",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
+            "#C4162A",
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
@@ -263,9 +264,9 @@
           "alias": "Operational Services",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -277,13 +278,13 @@
         },
         {
           "$$hashKey": "object:3599",
-          "alias": "CPU Utilization",
+          "alias": "CPU",
           "align": "auto",
           "colorMode": "cell",
           "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
+            "#37872D",
+            "#FA6400",
+            "#C4162A"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -298,13 +299,13 @@
         },
         {
           "$$hashKey": "object:3610",
-          "alias": "Memory Utilization",
+          "alias": "ОЗУ %",
           "align": "auto",
           "colorMode": "cell",
           "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
+            "#37872D",
+            "#FA6400",
+            "#C4162A"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -322,9 +323,9 @@
           "alias": "CPU Frequency",
           "align": "auto",
           "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
+            "#C4162A",
+            "#FA6400",
+            "#37872D"
           ],
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "decimals": 2,
@@ -356,48 +357,14 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
+          "editorMode": "code",
           "expr": "windows_os_info{job=~\"$job\"} * on(instance) group_right(product) windows_cs_hostname",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{label_name}}",
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "time() - windows_system_system_up_time{job=~\"$job\"}",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_cs_logical_processors{job=~\"$job\"} - 0",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$MonitoringWindowsServer"
-          },
-          "expr": "avg by (instance) (windows_cpu_core_frequency_mhz{job=~\"$job\"})",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "K"
         },
         {
           "datasource": {
@@ -406,6 +373,7 @@
           },
           "expr": "100 - (avg by (instance) (irate(windows_cpu_time_total{job=~\"$job\",mode=\"idle\"}[2m])) * 100)",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "CPU Utilization",
@@ -418,6 +386,7 @@
           },
           "expr": "windows_cs_physical_memory_bytes{job=~\"$job\"} - 0",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -430,6 +399,7 @@
           },
           "expr": "100 - 100 * windows_os_physical_memory_free_bytes{job=~\"$job\"} / windows_cs_physical_memory_bytes{job=~\"$job\"}",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "Memory Utilization",
@@ -442,6 +412,7 @@
           },
           "expr": "1 - (windows_logical_disk_free_bytes{job=~\"$job\",volume=~\"C:\"}/windows_logical_disk_size_bytes{job=~\"$job\",volume=~\"C:\"})",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -454,38 +425,24 @@
           },
           "expr": "max by (instance) (1-windows_logical_disk_free_bytes{job=~\"$job\"}/windows_logical_disk_size_bytes{job=~\"$job\"})",
           "format": "table",
+          "hide": false,
           "instant": true,
           "interval": "",
           "legendFormat": "",
           "refId": "F"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_os_processes{job=~\"$job\"}",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "G"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "sum by (instance) (windows_service_state{job=~\"$job\",state=~\"running\"})",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "H"
         }
       ],
-      "title": "$job:Overview of Server Resources",
+      "title": "$job:Обзор ресурсов сервера",
       "transform": "table",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "([^:]+):\\d+_(.*)",
+            "renamePattern": "$1"
+          }
+        }
+      ],
       "type": "table-old"
     },
     {
@@ -516,10 +473,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 9,
+        "w": 6,
         "x": 0,
-        "y": 7
+        "y": 11
       },
       "id": 59,
       "options": {
@@ -543,9 +500,9 @@
             "type": "prometheus",
             "uid": "PBFF03980003518EA"
           },
-          "editorMode": "builder",
+          "editorMode": "code",
           "exemplar": false,
-          "expr": "round(windows_os_users / 4 - 4, 1)",
+          "expr": "round(windows_os_users {job=\"Servers\",instance=\"terminal2:9182\"} / 4 - 4, 1)",
           "format": "heatmap",
           "instant": true,
           "legendFormat": "{{instance}}",
@@ -553,433 +510,64 @@
           "refId": "A"
         }
       ],
-      "title": "Users",
+      "title": "Пользователи на терминале ",
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "decimals": 1,
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 0,
-        "y": 13
-      },
-      "hiddenSeries": false,
-      "id": 47,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": false,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "paceLength": 10,
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "100 - (avg by (instance) (irate(windows_cpu_time_total{job=~\"$job\",mode=\"idle\"}[2m])) * 100)",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "CPU Usage by Host",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:3535",
-          "format": "percent",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:3536",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {
-        "Free Physical memory": "semi-dark-green",
-        "Free physical memory": "semi-dark-green",
-        "Free virtual memory": "super-light-blue",
-        "Physical memory": "dark-red",
-        "Virtual memory": "dark-blue"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
+        "uid": "PBFF03980003518EA"
       },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "binbps"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 1,
       "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 5,
-        "y": 13
+        "h": 9,
+        "w": 18,
+        "x": 6,
+        "y": 11
       },
-      "hiddenSeries": false,
-      "hideTimeOverride": false,
-      "id": 49,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:3675",
-          "alias": "/.*Physical.*/",
-          "linewidth": 3
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "100.0 - 100 * windows_os_physical_memory_free_bytes{job=~\"$job\"} / windows_cs_physical_memory_bytes{job=~\"$job\"}",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{instance}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Memory Usage by Host",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:3688",
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:3689",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 10,
-        "y": 13
-      },
-      "hiddenSeries": false,
-      "hideTimeOverride": false,
-      "id": 53,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null as zero",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "max by (instance) (irate(windows_net_bytes_sent_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Upload",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "B",
-          "step": 10
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "-max by (instance) (irate(windows_net_bytes_received_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Download",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "A",
-          "step": 10
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Network details of the maximum traffic network card of each host",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:4930",
-          "format": "bps",
-          "label": "Download & Upload",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:4931",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 2,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 15,
-        "y": 13
-      },
-      "hiddenSeries": false,
       "hideTimeOverride": false,
       "id": 51,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "max",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 20
+        },
+        "textMode": "auto"
       },
-      "percentage": false,
       "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "application": {
@@ -989,6 +577,7 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
+          "editorMode": "code",
           "expr": "-max by (instance) (irate(windows_logical_disk_read_bytes_total[2m]))",
           "format": "time_series",
           "functions": [],
@@ -1010,6 +599,7 @@
           "options": {
             "showDisabledItems": false
           },
+          "range": true,
           "refId": "A",
           "step": 20
         },
@@ -1046,95 +636,74 @@
           "step": 20
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Maximum disk read/write details for each host",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
+      "title": "Максимальное количество данных чтения/записи диска для каждого хоста",
+      "transformations": [
         {
-          "$$hashKey": "object:5258",
-          "format": "Bps",
-          "label": "Read & Write",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:5259",
-          "format": "iops",
-          "label": "",
-          "logBase": 1,
-          "show": false
+          "id": "renameByRegex",
+          "options": {
+            "regex": "([^:]+):\\d+_(.*)",
+            "renamePattern": "$1"
+          }
         }
       ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
+        "uid": "PBFF03980003518EA"
       },
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "binBps"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 4,
-        "x": 20,
-        "y": 13
+        "h": 14,
+        "w": 9,
+        "x": 0,
+        "y": 20
       },
-      "hiddenSeries": false,
       "hideTimeOverride": false,
-      "id": 55,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
+      "id": 53,
       "links": [],
-      "nullPointMode": "null as zero",
       "options": {
-        "alertThreshold": true
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 20,
+          "valueSize": 20
+        },
+        "textMode": "value_and_name"
       },
-      "percentage": false,
       "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "application": {
@@ -1144,7 +713,8 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "-max by (instance) (irate(windows_logical_disk_reads_total[2m]))",
+          "editorMode": "code",
+          "expr": "max by (instance) (irate(windows_net_bytes_sent_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8 ",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -1159,14 +729,15 @@
           "item": {
             "filter": ""
           },
-          "legendFormat": "{{instance}}_Read",
+          "legendFormat": "{{instance}}_Upload",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
+          "range": true,
           "refId": "B",
-          "step": 20
+          "step": 10
         },
         {
           "application": {
@@ -1176,7 +747,8 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "max by (instance) (irate(windows_logical_disk_writes_total[2m]))",
+          "editorMode": "code",
+          "expr": "-max by (instance) (irate(windows_net_bytes_received_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -1191,48 +763,194 @@
           "item": {
             "filter": ""
           },
-          "legendFormat": "{{instance}}_Writing",
+          "legendFormat": "{{instance}}_Download",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
-          "refId": "C",
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "Сетевые данные о максимальном трафике сетевой карты каждого хоста",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "([^:]+):\\d+_(.*)",
+            "renamePattern": "$1_$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "bits"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 5,
+        "x": 9,
+        "y": 20
+      },
+      "hideTimeOverride": false,
+      "id": 15,
+      "links": [],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 15,
+          "valueSize": 15
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFF03980003518EA"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "windows_logical_disk_size_bytes{job=~\"$job\",volume=~\"^[CDEFG]:$\"}",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{volume}} {{instance}}",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "range": false,
+          "refId": "A",
           "step": 20
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Maximum Disk IO by Host Details",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
+      "title": "Оставшееся дисковое пространство",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
       },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:5486",
-          "format": "iops",
-          "label": "Read & Write",
-          "logBase": 1,
-          "show": true
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              },
+              {
+                "color": "dark-yellow",
+                "value": 80
+              },
+              {
+                "color": "dark-red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 10,
+        "x": 14,
+        "y": 20
+      },
+      "id": 23,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
         {
-          "$$hashKey": "object:5487",
-          "format": "short",
-          "logBase": 1,
-          "show": false
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "editorMode": "code",
+          "expr": "100 - (windows_logical_disk_free_bytes{job=~\"$job\",volume=~\"^[CDEFG]:$\"} / windows_logical_disk_size_bytes{job=~\"$job\",volume=~\"^[CDEFG]:$\"})*100",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{volume}} {{instance}}",
+          "refId": "A"
         }
       ],
-      "yaxis": {
-        "align": false
-      }
+      "title": " Использование дисков",
+      "transformations": [],
+      "type": "bargauge"
     },
     {
       "collapsed": false,
@@ -1244,7 +962,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 34
       },
       "id": 43,
       "panels": [],
@@ -1296,479 +1014,15 @@
               }
             ]
           },
-          "unit": "s"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 0,
-        "y": 20
-      },
-      "id": 33,
-      "interval": "",
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.5.1",
-      "repeat": "host",
-      "repeatDirection": "v",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "time() - windows_system_system_up_time{job=~\"$job\",instance=~\"$instance\"}",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Start-up time",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "": {
-                  "text": ""
-                }
-              },
-              "type": "value"
-            }
-          ],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#299c46",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 60
-              },
-              {
-                "color": "#d44a3a",
-                "value": 90
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 2,
-        "y": 20
-      },
-      "id": 19,
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "9.5.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "100 - (avg(irate(windows_cpu_time_total{job=~\"$job\",instance=~\"$instance\",mode=\"idle\"}[2m])))*100",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "CPU Utilization",
-      "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 80
-              },
-              {
-                "color": "red",
-                "value": 90
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 4,
-        "y": 20
-      },
-      "id": 23,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true,
-        "valueMode": "color"
-      },
-      "pluginVersion": "9.5.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "100 - (windows_logical_disk_free_bytes{job=~\"$job\",instance=~\"$instance\"} / windows_logical_disk_size_bytes{job=~\"$job\",instance=~\"$instance\"})*100",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{volume}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Utilization by sector",
-      "type": "bargauge"
-    },
-    {
-      "aliasColors": {
-        "Received mysqld-exporter:9104": "#0A50A1",
-        "stopped": "#2F575E"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 10,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 7,
-        "x": 10,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 7,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 0,
-      "links": [],
-      "nullPointMode": "null as zero",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "sum(windows_service_state{job=~\"$job\",instance=~\"$instance\"}) by (state)",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{state}}",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "A",
-          "step": 5
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Service Status",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:570",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:571",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 7,
-        "x": 17,
-        "y": 20
-      },
-      "hiddenSeries": false,
-      "id": 27,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "paceLength": 10,
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:940",
-          "alias": "Number of processes",
-          "color": "#B877D9"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_os_processes{job=~\"$job\",instance=~\"$instance\"}",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "Number of processes",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Number of processes",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:87",
-          "decimals": 0,
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:88",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
           "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 2,
+        "h": 4,
         "w": 2,
         "x": 0,
-        "y": 22
+        "y": 35
       },
       "id": 35,
       "interval": "",
@@ -1788,7 +1042,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.4.0",
+      "pluginVersion": "9.5.1",
       "repeat": "host",
       "repeatDirection": "v",
       "targets": [
@@ -1836,7 +1090,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1853,10 +1108,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 4,
         "w": 2,
         "x": 2,
-        "y": 23
+        "y": 35
       },
       "id": 21,
       "links": [],
@@ -1873,7 +1128,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.4.0",
+      "pluginVersion": "9.5.1",
       "targets": [
         {
           "datasource": {
@@ -1887,191 +1142,6 @@
       ],
       "title": "Memory Utilization",
       "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 0,
-        "y": 24
-      },
-      "id": 37,
-      "interval": "",
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "last"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.4.0",
-      "repeat": "host",
-      "repeatDirection": "v",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_cs_physical_memory_bytes{job=~\"$job\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Total Memory",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "decimals": 1,
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 26
-      },
-      "hiddenSeries": false,
-      "id": 25,
-      "legend": {
-        "alignAsTable": false,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "paceLength": 10,
-      "percentage": false,
-      "pluginVersion": "9.4.0",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "100 - avg(irate(windows_cpu_time_total{job=~\"$job\",instance=~\"$instance\",mode=\"idle\"}[5m]))*100",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "CPU Utilization",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "CPU Utilization",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:366",
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:367",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
     },
     {
       "aliasColors": {
@@ -2101,9 +1171,9 @@
       "fillGradient": 3,
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 26
+        "w": 5,
+        "x": 4,
+        "y": 35
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2127,7 +1197,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.4.0",
+      "pluginVersion": "9.5.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2297,175 +1367,17 @@
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 26
-      },
-      "hiddenSeries": false,
-      "hideTimeOverride": false,
-      "id": 15,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "null as zero",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "9.4.0",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:7159",
-          "alias": "/Total Space.*/",
-          "color": "#F2495C"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_logical_disk_free_bytes{job=~\"$job\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "Residual Space {{volume}}",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "A",
-          "step": 20
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "windows_logical_disk_size_bytes{job=~\"$job\",instance=~\"$instance\"}",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "Total Space {{volume}}",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "B",
-          "step": 20
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Remaining Disk Space",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:312",
-          "format": "decbytes",
-          "logBase": 1,
-          "min": "0",
-          "show": true
-        },
-        {
-          "$$hashKey": "object:313",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 34
+        "w": 5,
+        "x": 9,
+        "y": 35
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
-      "id": 11,
+      "id": 9,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -2474,8 +1386,6 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sort": "max",
-        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -2504,7 +1414,7 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "irate(windows_net_bytes_sent_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m])*8>0\r",
+          "expr": "irate(windows_logical_disk_reads_total{job=~\"$job\",instance=~\"$instance\"}[5m])",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -2514,19 +1424,18 @@
           "host": {
             "filter": ""
           },
-          "interval": "",
           "intervalFactor": 1,
           "item": {
             "filter": ""
           },
-          "legendFormat": "{{nic}}-Sent-Upload",
+          "legendFormat": "read {{volume}}",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
           "refId": "B",
-          "step": 10
+          "step": 20
         },
         {
           "application": {
@@ -2536,7 +1445,7 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "irate(windows_net_bytes_received_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m])*8\n",
+          "expr": "irate(windows_logical_disk_writes_total{job=~\"$job\",instance=~\"$instance\"}[5m])",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -2550,22 +1459,22 @@
           "item": {
             "filter": ""
           },
-          "legendFormat": "{{nic}}-Received-Download",
+          "legendFormat": "write {{volume}}",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
-          "refId": "A",
-          "step": 10
+          "refId": "C",
+          "step": 20
         }
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Network Details",
+      "title": "Disk IO",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2576,16 +1485,16 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:137",
-          "format": "bps",
+          "$$hashKey": "object:815",
+          "format": "iops",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:138",
+          "$$hashKey": "object:816",
           "format": "short",
           "logBase": 1,
-          "show": false
+          "show": true
         }
       ],
       "yaxis": {
@@ -2611,9 +1520,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 34
+        "w": 5,
+        "x": 14,
+        "y": 35
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2750,6 +1659,7 @@
         "type": "prometheus",
         "uid": "MonitoringWindowsServer"
       },
+      "decimals": 1,
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -2760,19 +1670,286 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 34
+        "w": 5,
+        "x": 19,
+        "y": 35
       },
       "hiddenSeries": false,
-      "hideTimeOverride": false,
-      "id": 9,
+      "id": 25,
       "legend": {
-        "alignAsTable": true,
+        "alignAsTable": false,
         "avg": true,
         "current": true,
         "max": true,
         "min": true,
+        "rightSide": false,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "paceLength": 10,
+      "percentage": false,
+      "pluginVersion": "9.5.1",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "expr": "100 - avg(irate(windows_cpu_time_total{job=~\"$job\",instance=~\"$instance\",mode=\"idle\"}[5m]))*100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "CPU Utilization",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "CPU Utilization",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:366",
+          "format": "percent",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:367",
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "MonitoringWindowsServer"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 0,
+        "y": 39
+      },
+      "id": 37,
+      "interval": "",
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "repeat": "host",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "expr": "windows_cs_physical_memory_bytes{job=~\"$job\",instance=~\"$instance\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Memory",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "MonitoringWindowsServer"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "": {
+                  "text": ""
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 60
+              },
+              {
+                "color": "#d44a3a",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 2,
+        "y": 39
+      },
+      "id": 19,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "expr": "100 - (avg(irate(windows_cpu_time_total{job=~\"$job\",instance=~\"$instance\",mode=\"idle\"}[2m])))*100",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "CPU Utilization",
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "MonitoringWindowsServer"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 0,
+        "y": 43
+      },
+      "hiddenSeries": false,
+      "hideTimeOverride": false,
+      "id": 12,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
         "rightSide": false,
         "show": true,
         "total": false,
@@ -2803,7 +1980,7 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "irate(windows_logical_disk_reads_total{job=~\"$job\",instance=~\"$instance\"}[5m])",
+          "expr": "windows_system_threads{job=~\"$job\",instance=~\"$instance\"}",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -2813,56 +1990,26 @@
           "host": {
             "filter": ""
           },
+          "interval": "",
           "intervalFactor": 1,
           "item": {
             "filter": ""
           },
-          "legendFormat": "read {{volume}}",
+          "legendFormat": "system_threads",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
-          "refId": "B",
-          "step": 20
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "irate(windows_logical_disk_writes_total{job=~\"$job\",instance=~\"$instance\"}[5m])",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "write {{volume}}",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "C",
+          "refId": "A",
           "step": 20
         }
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Disk IO",
+      "title": "system_threads",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -2874,114 +2021,14 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:815",
-          "format": "iops",
+          "$$hashKey": "object:414",
+          "format": "none",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:816",
+          "$$hashKey": "object:415",
           "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "MonitoringWindowsServer"
-      },
-      "decimals": 2,
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 0,
-        "y": 42
-      },
-      "hiddenSeries": false,
-      "hideTimeOverride": false,
-      "id": 29,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": false,
-        "total": false,
-        "values": true
-      },
-      "lines": false,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "paceLength": 10,
-      "percentage": false,
-      "pluginVersion": "9.5.1",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "editorMode": "code",
-          "expr": "(irate(windows_net_bytes_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m]) * 8 / windows_net_current_bandwidth_bytes{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}) * 100",
-          "legendFormat": "{{nic}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Network Utilization",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:915",
-          "format": "percent",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:916",
-          "format": "bytes",
           "logBase": 1,
           "show": true
         }
@@ -3008,10 +2055,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 6,
-        "y": 42
+        "h": 9,
+        "w": 5,
+        "x": 4,
+        "y": 43
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3163,22 +2210,24 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 42
+        "h": 9,
+        "w": 5,
+        "x": 9,
+        "y": 43
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
-      "id": 12,
+      "id": 11,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": true,
-        "max": false,
-        "min": false,
+        "max": true,
+        "min": true,
         "rightSide": false,
         "show": true,
+        "sort": "max",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -3207,7 +2256,7 @@
             "type": "prometheus",
             "uid": "MonitoringWindowsServer"
           },
-          "expr": "windows_system_threads{job=~\"$job\",instance=~\"$instance\"}",
+          "expr": "irate(windows_net_bytes_sent_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m])*8>0\r",
           "format": "time_series",
           "functions": [],
           "group": {
@@ -3222,21 +2271,152 @@
           "item": {
             "filter": ""
           },
-          "legendFormat": "system_threads",
+          "legendFormat": "{{nic}}-Sent-Upload",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "expr": "irate(windows_net_bytes_received_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m])*8\n",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{nic}}-Received-Download",
           "metric": "mysql_global_status_questions",
           "mode": 0,
           "options": {
             "showDisabledItems": false
           },
           "refId": "A",
-          "step": 20
+          "step": 10
         }
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "system_threads",
+      "title": "Network Details",
       "tooltip": {
-        "shared": false,
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:137",
+          "format": "bps",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:138",
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "MonitoringWindowsServer"
+      },
+      "decimals": 2,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 5,
+        "x": 14,
+        "y": 43
+      },
+      "hiddenSeries": false,
+      "hideTimeOverride": false,
+      "id": 29,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "paceLength": 10,
+      "percentage": false,
+      "pluginVersion": "9.5.1",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "editorMode": "code",
+          "expr": "(irate(windows_net_bytes_total{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}[5m]) * 8 / windows_net_current_bandwidth_bytes{job=~\"$job\",instance=~\"$instance\",nic!~'isatap.*|VPN.*'}) * 100",
+          "legendFormat": "{{nic}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Network Utilization",
+      "tooltip": {
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -3248,14 +2428,14 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:414",
-          "format": "none",
+          "$$hashKey": "object:915",
+          "format": "percent",
           "logBase": 1,
           "show": true
         },
         {
-          "$$hashKey": "object:415",
-          "format": "short",
+          "$$hashKey": "object:916",
+          "format": "bytes",
           "logBase": 1,
           "show": true
         }
@@ -3282,10 +2462,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 18,
-        "y": 42
+        "h": 9,
+        "w": 5,
+        "x": 19,
+        "y": 43
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3384,7 +2564,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "10s",
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
@@ -3457,8 +2637,8 @@
       {
         "current": {
           "selected": false,
-          "text": "10.11.10.212:9182",
-          "value": "10.11.10.212:9182"
+          "text": "db2:9182",
+          "value": "db2:9182"
         },
         "datasource": {
           "type": "prometheus",
@@ -3487,8 +2667,8 @@
       {
         "current": {
           "selected": false,
-          "text": "hv10",
-          "value": "hv10"
+          "text": "db2",
+          "value": "db2"
         },
         "datasource": {
           "type": "prometheus",
@@ -3513,6 +2693,17 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFF03980003518EA"
+        },
+        "filters": [],
+        "hide": 0,
+        "name": "Filters",
+        "skipUrlSync": false,
+        "type": "adhoc"
       }
     ]
   },
