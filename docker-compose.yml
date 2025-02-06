@@ -1,10 +1,9 @@
-version: '3.8'
+version: '3.9'
 
 services:
   prometheus:
     image: prom/prometheus:v3.0.1
     volumes:
-      - ./prometheus/alerts.yml:/etc/prometheus/alerts.yml
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     container_name: prometheus
     hostname: prometheus
@@ -34,6 +33,16 @@ services:
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
       - GF_DASHBOARDS_JSON_PATH=/etc/grafana/provisioning/dashboards
       - GF_DASHBOARDS_JSON_ENABLED=true
+    restart: unless-stopped
+
+  snmp_exporter:
+    image: prom/snmp-exporter:v0.22.0
+    ports:
+      - "9116:9116"
+#    volumes:
+#      - ./snmp.yml:/etc/snmp_exporter/snmp.yml
+#    command:
+#      - --config.file=/etc/snmp_exporter/snmp.yml
     restart: unless-stopped
 
 volumes:
