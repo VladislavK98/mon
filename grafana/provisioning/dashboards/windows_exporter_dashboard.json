@@ -1194,8 +1194,8 @@
         ]
       },
       "gridPos": {
-        "h": 13,
-        "w": 14,
+        "h": 12,
+        "w": 24,
         "x": 0,
         "y": 34
       },
@@ -1438,7 +1438,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 46
       },
       "id": 43,
       "panels": [],
@@ -1498,7 +1498,7 @@
         "h": 4,
         "w": 2,
         "x": 0,
-        "y": 48
+        "y": 47
       },
       "id": 35,
       "interval": "",
@@ -1587,7 +1587,7 @@
         "h": 4,
         "w": 2,
         "x": 2,
-        "y": 48
+        "y": 47
       },
       "id": 21,
       "links": [],
@@ -1649,7 +1649,7 @@
         "h": 8,
         "w": 5,
         "x": 4,
-        "y": 48
+        "y": 47
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1849,7 +1849,7 @@
         "h": 8,
         "w": 5,
         "x": 9,
-        "y": 48
+        "y": 47
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -1998,7 +1998,7 @@
         "h": 8,
         "w": 5,
         "x": 14,
-        "y": 48
+        "y": 47
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2148,7 +2148,7 @@
         "h": 8,
         "w": 5,
         "x": 19,
-        "y": 48
+        "y": 47
       },
       "hiddenSeries": false,
       "id": 25,
@@ -2271,7 +2271,7 @@
         "h": 4,
         "w": 2,
         "x": 0,
-        "y": 52
+        "y": 51
       },
       "id": 37,
       "interval": "",
@@ -2359,7 +2359,7 @@
         "h": 4,
         "w": 2,
         "x": 2,
-        "y": 52
+        "y": 51
       },
       "id": 19,
       "links": [],
@@ -2415,7 +2415,7 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 56
+        "y": 55
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2534,7 +2534,7 @@
         "h": 9,
         "w": 5,
         "x": 4,
-        "y": 56
+        "y": 55
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2689,7 +2689,7 @@
         "h": 9,
         "w": 5,
         "x": 9,
-        "y": 56
+        "y": 55
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2842,7 +2842,7 @@
         "h": 9,
         "w": 5,
         "x": 14,
-        "y": 56
+        "y": 55
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -2941,7 +2941,7 @@
         "h": 9,
         "w": 5,
         "x": 19,
-        "y": 56
+        "y": 55
       },
       "hiddenSeries": false,
       "hideTimeOverride": false,
@@ -3214,6 +3214,6 @@
   "timezone": "",
   "title": "Windows Exporter Dashboard 2024",
   "uid": "Kdh0OoSGz",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
