@@ -28,3 +28,6 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 172.18.0.1:9116 
+  - job_name: 'windows_terminal_sessions'
+    static_configs:
+      - targets: ['terminal2:8080']
