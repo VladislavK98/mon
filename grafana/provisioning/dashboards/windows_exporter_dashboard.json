@@ -405,7 +405,7 @@
         }
       ],
       "title": "$job:Обзор ресурсов сервера",
-      "transform": "table",
+      "transform": "timeseries_to_rows",
       "transformations": [
         {
           "id": "renameByRegex",
@@ -508,210 +508,6 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 0,
-        "y": 16
-      },
-      "id": 59,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.5.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFF03980003518EA"
-          },
-          "editorMode": "builder",
-          "expr": "windows_terminal_sessions_active_sessions",
-          "hide": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Статус \"Активно\"",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFF03980003518EA"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 21,
-        "w": 7,
-        "x": 6,
-        "y": 16
-      },
-      "hideTimeOverride": false,
-      "id": 53,
-      "links": [],
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "titleSize": 20,
-          "valueSize": 20
-        },
-        "textMode": "value_and_name"
-      },
-      "pluginVersion": "9.5.1",
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "editorMode": "code",
-          "expr": "max by (instance) (irate(windows_net_bytes_sent_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8 ",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Upload",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "range": true,
-          "refId": "B",
-          "step": 10
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "editorMode": "code",
-          "expr": "-max by (instance) (irate(windows_net_bytes_received_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Download",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "range": true,
-          "refId": "A",
-          "step": 10
-        }
-      ],
-      "title": "Сетевые данные о максимальном трафике сетевой карты каждого хоста",
-      "transformations": [
-        {
-          "id": "renameByRegex",
-          "options": {
-            "regex": "([^:]+):\\d+_(.*)",
-            "renamePattern": "$1_$2"
-          }
-        }
-      ],
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFF03980003518EA"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
                 "color": "dark-green",
                 "value": null
               },
@@ -726,9 +522,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 11,
-        "x": 13,
+        "h": 5,
+        "w": 24,
+        "x": 0,
         "y": 16
       },
       "hideTimeOverride": false,
@@ -847,6 +643,144 @@
             "mode": "absolute",
             "steps": [
               {
+                "color": "dark-red",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "binBps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "hideTimeOverride": false,
+      "id": 53,
+      "links": [],
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 20,
+          "valueSize": 20
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "editorMode": "code",
+          "expr": "max by (instance) (irate(windows_net_bytes_sent_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8 ",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "interval": "",
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{instance}}_Upload",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "range": true,
+          "refId": "B",
+          "step": 10
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "editorMode": "code",
+          "expr": "-max by (instance) (irate(windows_net_bytes_received_total{job=~\"$job\",nic!~'isatap.*|VPN.*'}[2m]))*8",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "interval": "",
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{instance}}_Download",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "Сетевые данные о максимальном трафике сетевой карты каждого хоста",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "([^:]+):\\d+_(.*)",
+            "renamePattern": "$1_$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
                 "color": "green",
                 "value": null
               },
@@ -860,10 +794,76 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 6,
+        "h": 8,
+        "w": 4,
         "x": 0,
-        "y": 24
+        "y": 29
+      },
+      "id": 59,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFF03980003518EA"
+          },
+          "editorMode": "builder",
+          "expr": "windows_terminal_sessions_active_sessions",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Статус \"Активно\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 4,
+        "y": 29
       },
       "id": 62,
       "options": {
@@ -1058,7 +1058,7 @@
         "h": 13,
         "w": 11,
         "x": 13,
-        "y": 25
+        "y": 29
       },
       "id": 60,
       "options": {
@@ -1192,7 +1192,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 42
       },
       "id": 43,
       "panels": [
@@ -2791,7 +2791,7 @@
       "type": "row"
     }
   ],
-  "refresh": "10s",
+  "refresh": false,
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
@@ -2935,8 +2935,8 @@
     ]
   },
   "time": {
-    "from": "now-3h",
-    "to": "now"
+    "from": "2025-03-13T22:35:48.492Z",
+    "to": "2025-03-14T22:35:48.492Z"
   },
   "timepicker": {
     "refresh_intervals": [
