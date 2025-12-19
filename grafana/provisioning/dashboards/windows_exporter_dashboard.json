@@ -507,7 +507,7 @@
       },
       "gridPos": {
         "h": 11,
-        "w": 6,
+        "w": 5,
         "x": 0,
         "y": 15
       },
@@ -541,7 +541,207 @@
           "refId": "A"
         }
       ],
-      "title": "Статус \"Активно\"",
+      "title": "(Terminal2)Статус \"Активно\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 5,
+        "x": 5,
+        "y": 15
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFF03980003518EA"
+          },
+          "editorMode": "code",
+          "expr": "windows_terminal_ipku_sessions_active_sessions",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "(Terminal_ipku)Статус \"Активно\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "binbps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 10,
+        "x": 14,
+        "y": 15
+      },
+      "hideTimeOverride": false,
+      "id": 51,
+      "links": [],
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 20
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "editorMode": "code",
+          "expr": "-max by (instance) (irate(windows_logical_disk_read_bytes_total[2m]))",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "interval": "",
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{instance}}_Read",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "range": true,
+          "refId": "A",
+          "step": 20
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "MonitoringWindowsServer"
+          },
+          "expr": "max by (instance) (irate(windows_logical_disk_write_bytes_total[2m]))",
+          "format": "time_series",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "hide": false,
+          "host": {
+            "filter": ""
+          },
+          "interval": "",
+          "intervalFactor": 1,
+          "item": {
+            "filter": ""
+          },
+          "legendFormat": "{{instance}}_Writing",
+          "metric": "mysql_global_status_questions",
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "refId": "B",
+          "step": 20
+        }
+      ],
+      "title": "Максимальное количество данных чтения/записи диска для каждого хоста",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "([^:]+):\\d+_(.*)",
+            "renamePattern": "$1"
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -573,10 +773,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 22,
-        "w": 7,
-        "x": 6,
-        "y": 15
+        "h": 13,
+        "w": 5,
+        "x": 14,
+        "y": 24
       },
       "hideTimeOverride": false,
       "id": 53,
@@ -677,141 +877,6 @@
           "options": {
             "regex": "([^:]+):\\d+_(.*)",
             "renamePattern": "$1_$2"
-          }
-        }
-      ],
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFF03980003518EA"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "dark-green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "binbps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 11,
-        "x": 13,
-        "y": 15
-      },
-      "hideTimeOverride": false,
-      "id": 51,
-      "links": [],
-      "options": {
-        "colorMode": "background_solid",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "titleSize": 20
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "9.5.1",
-      "targets": [
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "editorMode": "code",
-          "expr": "-max by (instance) (irate(windows_logical_disk_read_bytes_total[2m]))",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Read",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "range": true,
-          "refId": "A",
-          "step": 20
-        },
-        {
-          "application": {
-            "filter": ""
-          },
-          "datasource": {
-            "type": "prometheus",
-            "uid": "MonitoringWindowsServer"
-          },
-          "expr": "max by (instance) (irate(windows_logical_disk_write_bytes_total[2m]))",
-          "format": "time_series",
-          "functions": [],
-          "group": {
-            "filter": ""
-          },
-          "hide": false,
-          "host": {
-            "filter": ""
-          },
-          "interval": "",
-          "intervalFactor": 1,
-          "item": {
-            "filter": ""
-          },
-          "legendFormat": "{{instance}}_Writing",
-          "metric": "mysql_global_status_questions",
-          "mode": 0,
-          "options": {
-            "showDisabledItems": false
-          },
-          "refId": "B",
-          "step": 20
-        }
-      ],
-      "title": "Максимальное количество данных чтения/записи диска для каждого хоста",
-      "transformations": [
-        {
-          "id": "renameByRegex",
-          "options": {
-            "regex": "([^:]+):\\d+_(.*)",
-            "renamePattern": "$1"
           }
         }
       ],
@@ -976,8 +1041,8 @@
       },
       "gridPos": {
         "h": 13,
-        "w": 11,
-        "x": 13,
+        "w": 5,
+        "x": 19,
         "y": 24
       },
       "id": 60,
@@ -1127,7 +1192,7 @@
       },
       "gridPos": {
         "h": 11,
-        "w": 6,
+        "w": 5,
         "x": 0,
         "y": 26
       },
@@ -1160,7 +1225,68 @@
           "refId": "A"
         }
       ],
-      "title": "Статус \"Диск\"",
+      "title": "(Terminal2)Статус \"Диск\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFF03980003518EA"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 5,
+        "x": 5,
+        "y": 26
+      },
+      "id": 63,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFF03980003518EA"
+          },
+          "editorMode": "code",
+          "expr": "windows_terminal_ipku_sessions_inactive_sessions",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "(Terminal_ipku)Статус \"Диск\"",
       "type": "stat"
     },
     {
@@ -1220,7 +1346,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 57
+            "y": 73
           },
           "id": 35,
           "interval": "",
@@ -1308,7 +1434,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 57
+            "y": 73
           },
           "id": 21,
           "links": [],
@@ -1370,7 +1496,7 @@
             "h": 8,
             "w": 5,
             "x": 4,
-            "y": 57
+            "y": 73
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1570,7 +1696,7 @@
             "h": 8,
             "w": 5,
             "x": 9,
-            "y": 57
+            "y": 73
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1719,7 +1845,7 @@
             "h": 8,
             "w": 5,
             "x": 14,
-            "y": 57
+            "y": 73
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1869,7 +1995,7 @@
             "h": 8,
             "w": 5,
             "x": 19,
-            "y": 57
+            "y": 73
           },
           "hiddenSeries": false,
           "id": 25,
@@ -1991,7 +2117,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 61
+            "y": 77
           },
           "id": 37,
           "interval": "",
@@ -2078,7 +2204,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 61
+            "y": 77
           },
           "id": 19,
           "links": [],
@@ -2134,7 +2260,7 @@
             "h": 9,
             "w": 4,
             "x": 0,
-            "y": 65
+            "y": 81
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2253,7 +2379,7 @@
             "h": 9,
             "w": 5,
             "x": 4,
-            "y": 65
+            "y": 81
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2408,7 +2534,7 @@
             "h": 9,
             "w": 5,
             "x": 9,
-            "y": 65
+            "y": 81
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2561,7 +2687,7 @@
             "h": 9,
             "w": 5,
             "x": 14,
-            "y": 65
+            "y": 81
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2660,7 +2786,7 @@
             "h": 9,
             "w": 5,
             "x": 19,
-            "y": 65
+            "y": 81
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2946,6 +3072,6 @@
   "timezone": "",
   "title": "Монитор",
   "uid": "1",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }

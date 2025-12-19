@@ -6,12 +6,14 @@ scrape_configs:
     static_configs:
       - targets:
           - 'terminal2:9182'
-          - '10.11.10.66:9182'
+          - '10.7.10.66:9182'
           - 'srv1czup:9182'
           - 'hv10:9182'
           - 'db:9182'
           - 'db2:9182'
+          - 'terminal_ipku:9182'
           - 'srv1c:9182'
+          - 'srv1cerp:9182'
         labels:
           environment: 'production'
   - job_name: 'snmp'
@@ -28,6 +30,9 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 172.18.0.1:9116 
-  - job_name: 'windows_terminal_sessions'
+  - job_name: 'windows_terminal2_sessions'
     static_configs:
       - targets: ['terminal2:8080']
+  - job_name: 'windows_terminal_ipku_sessions'
+    static_configs:
+      - targets: ['terminal_ipku:8080']
