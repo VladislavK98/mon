@@ -5,7 +5,9 @@ scrape_configs:
   - job_name: 'Servers'
     static_configs:
       - targets:
+          - 'terminal-rtsz:9182'
           - 'terminal2:9182'
+          - 'terminal-rtsz'
           - '10.7.10.66:9182'
           - 'srv1czup:9182'
           - 'hv10:9182'
@@ -14,6 +16,7 @@ scrape_configs:
           - 'terminal_ipku:9182'
           - 'srv1c:9182'
           - 'srv1cerp:9182'
+          - 'mail:9182'
         labels:
           environment: 'production'
   - job_name: 'snmp'
@@ -37,6 +40,11 @@ scrape_configs:
     static_configs:
       - targets: ['terminal_ipku:8080']
 
+  - job_name: 'windows_terminal_rtsz_sessions'
+    static_configs:
+      - targets: ['terminal-rtsz:8080']
+
+
   - job_name: 'node-exporter'
     static_configs:
       - targets: 
@@ -46,3 +54,15 @@ scrape_configs:
           group: 'servers'
           instance: 'main-server'
           os: 'linux'
+  - job_name: 'bitrix24-online-users'
+    scrape_interval: 60s
+    scrape_timeout: 30s
+    metrics_path: '/'
+    static_configs:
+      - targets: ['10.10.10.137:8090']  # Адрес вашего Bash экспортера
+        labels:
+          service: 'bitrix24'
+          instance: 'rostherm-crm'
+          source: 'bash-exporter'
+
+
