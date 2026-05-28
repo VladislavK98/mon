@@ -660,6 +660,70 @@
     },
     {
       "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 10,
+        "y": 5
+      },
+      "id": 67,
+      "options": {
+        "bgColor": "dark-red",
+        "clockType": "24 hour",
+        "countdownSettings": {
+          "endCountdownTime": "2026-05-28T23:06:35+03:00",
+          "endText": "00:00:00",
+          "invalidValueText": "invalid value",
+          "noValueText": "no value found",
+          "queryCalculation": "last",
+          "source": "input"
+        },
+        "countupSettings": {
+          "beginCountupTime": "2026-05-28T23:06:35+03:00",
+          "beginText": "00:00:00",
+          "invalidValueText": "invalid value",
+          "noValueText": "no value found",
+          "queryCalculation": "last",
+          "source": "input"
+        },
+        "dateSettings": {
+          "dateFormat": "DD.MM.YYYY",
+          "fontSize": "20px",
+          "fontWeight": "normal",
+          "locale": "",
+          "showDate": true
+        },
+        "descriptionSettings": {
+          "descriptionText": "",
+          "fontSize": "12px",
+          "fontWeight": "normal",
+          "noValueText": "no description found",
+          "source": "none"
+        },
+        "fontMono": false,
+        "mode": "time",
+        "refresh": "sec",
+        "timeSettings": {
+          "fontSize": "50px",
+          "fontWeight": "normal"
+        },
+        "timezone": "",
+        "timezoneSettings": {
+          "fontSize": "12px",
+          "fontWeight": "normal",
+          "showTimezone": false,
+          "zoneFormat": "offsetAbbv"
+        }
+      },
+      "pluginVersion": "2.1.9",
+      "title": "Дата/Время",
+      "type": "grafana-clock-panel"
+    },
+    {
+      "datasource": {
         "type": "prometheus",
         "uid": "PBFF03980003518EA"
       },
@@ -1379,7 +1443,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 86
+            "y": 94
           },
           "id": 35,
           "interval": "",
@@ -1467,7 +1531,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 86
+            "y": 94
           },
           "id": 21,
           "links": [],
@@ -1529,7 +1593,7 @@
             "h": 8,
             "w": 5,
             "x": 4,
-            "y": 86
+            "y": 94
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1729,7 +1793,7 @@
             "h": 8,
             "w": 5,
             "x": 9,
-            "y": 86
+            "y": 94
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1878,7 +1942,7 @@
             "h": 8,
             "w": 5,
             "x": 14,
-            "y": 86
+            "y": 94
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2028,7 +2092,7 @@
             "h": 8,
             "w": 5,
             "x": 19,
-            "y": 86
+            "y": 94
           },
           "hiddenSeries": false,
           "id": 25,
@@ -2150,7 +2214,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 90
+            "y": 98
           },
           "id": 37,
           "interval": "",
@@ -2237,7 +2301,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 90
+            "y": 98
           },
           "id": 19,
           "links": [],
@@ -2293,7 +2357,7 @@
             "h": 9,
             "w": 4,
             "x": 0,
-            "y": 94
+            "y": 102
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2412,7 +2476,7 @@
             "h": 9,
             "w": 5,
             "x": 4,
-            "y": 94
+            "y": 102
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2567,7 +2631,7 @@
             "h": 9,
             "w": 5,
             "x": 9,
-            "y": 94
+            "y": 102
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2720,7 +2784,7 @@
             "h": 9,
             "w": 5,
             "x": 14,
-            "y": 94
+            "y": 102
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2819,7 +2883,7 @@
             "h": 9,
             "w": 5,
             "x": 19,
-            "y": 94
+            "y": 102
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,

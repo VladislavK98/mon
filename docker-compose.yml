@@ -28,6 +28,8 @@ services:
       - prometheus
     hostname: grafana
     environment:
+      - GF_INSTALL_PLUGINS=ddurieux-glpi-app
+      - GF_INSTALL_PLUGINS=grafana-clock-panel
       - GF_PROVISIONING_ENABLED=true
       - GF_PROVISIONING_DASHBOARDS_ENABLED=true
       - GF_SECURITY_ADMIN_PASSWORD=admin
