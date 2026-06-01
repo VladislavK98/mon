@@ -671,7 +671,7 @@
       },
       "id": 67,
       "options": {
-        "bgColor": "dark-red",
+        "bgColor": "dark-green",
         "clockType": "24 hour",
         "countdownSettings": {
           "endCountdownTime": "2026-05-28T23:06:35+03:00",
@@ -707,7 +707,7 @@
         "mode": "time",
         "refresh": "sec",
         "timeSettings": {
-          "fontSize": "50px",
+          "fontSize": "70px",
           "fontWeight": "normal"
         },
         "timezone": "",
@@ -1214,8 +1214,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red",
-                "value": null
+                "color": "semi-dark-red"
               }
             ]
           }
@@ -1275,8 +1274,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red",
-                "value": null
+                "color": "semi-dark-red"
               }
             ]
           }
@@ -1336,8 +1334,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red",
-                "value": null
+                "color": "semi-dark-red"
               },
               {
                 "color": "red",
@@ -3169,6 +3166,6 @@
   "timezone": "",
   "title": "Монитор",
   "uid": "1",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
