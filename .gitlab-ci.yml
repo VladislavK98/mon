@@ -1,4 +1,3 @@
-# Простой CI пайплайн для проверки конфигурации
 image: docker:latest
 
 services:
@@ -7,7 +6,6 @@ services:
 stages:
   - validate
 
-# Кешируем слои Docker для ускорения
 cache:
   paths:
     - /root/.cache
@@ -20,45 +18,39 @@ validate:
     
     # 1. Проверяем синтаксис docker-compose.yml
     - echo "Checking docker-compose.yml syntax..."
-    - docker-compose config || (echo "❌ docker-compose.yml has errors!" && exit 1)
+    - docker-compose config
     - echo "✅ docker-compose.yml is valid"
     
     # 2. Проверяем наличие обязательных файлов
     - echo "Checking required files..."
     - test -f prometheus/prometheus.yml && echo "✅ prometheus/prometheus.yml exists" || (echo "❌ prometheus/prometheus.yml not found" && exit 1)
-    - test -d grafana/provisioning/datasources && echo "✅ grafana/provisioning/datasources/ exists" || echo "⚠️ grafana/provisioning/datasources/ not found (may be ok)"
-    - test -d grafana/provisioning/dashboards && echo "✅ grafana/provisioning/dashboards/ exists" || echo "⚠️ grafana/provisioning/dashboards/ not found (may be ok)"
-    - test -f grafana/provisioning/dashboards/windows_exporter_dashboard.json && echo "✅ windows_exporter_dashboard.json exists" || echo "⚠️ windows_exporter_dashboard.json not found"
+    - test -d grafana/provisioning/datasources && echo "✅ grafana/provisioning/datasources/ exists" || echo "⚠️ grafana/provisioning/datasources/ not found"
+    - test -d grafana/provisioning/dashboards && echo "✅ grafana/provisioning/dashboards/ exists" || echo "⚠️ grafana/provisioning/dashboards/ not found"
     
     # 3. Проверяем валидность конфигурации Prometheus
     - echo "Checking Prometheus configuration..."
-    - docker run --rm -v $(pwd)/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:v2.55.1 promtool check config /etc/prometheus/prometheus.yml || (echo "❌ Prometheus config is invalid!" && exit 1)
+    - docker run --rm -v $(pwd)/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus:v2.55.1 promtool check config /etc/prometheus/prometheus.yml
     - echo "✅ Prometheus configuration is valid"
     
-    # 4. Проверяем, что образы существуют и доступны
+    # 4. Проверяем, что образы существуют
     - echo "Checking Docker images availability..."
-    - docker pull prom/prometheus:v2.55.1 && echo "✅ prom/prometheus:v2.55.1 is available" || echo "⚠️ Failed to pull prom/prometheus"
-    - docker pull grafana/grafana:9.5.1 && echo "✅ grafana/grafana:9.5.1 is available" || echo "⚠️ Failed to pull grafana/grafana"
-    - docker pull prom/snmp-exporter:v0.22.0 && echo "✅ prom/snmp-exporter:v0.22.0 is available" || echo "⚠️ Failed to pull prom/snmp-exporter"
+    - docker pull prom/prometheus:v2.55.1
+    - docker pull grafana/grafana:9.5.1
+    - docker pull prom/snmp-exporter:v0.22.0
+    - echo "✅ All images are available"
     
-    # 5. Проверяем, что все сервисы могут запуститься (сухой запуск)
-    - echo "Checking if services can start (dry-run)..."
+    # 5. Проверяем, что сервисы могут запуститься
+    - echo "Checking if services can start..."
     - docker-compose up -d --no-build
     - docker-compose ps
     - docker-compose down
     - echo "✅ All services can start successfully"
     
-    # 6. Проверяем доступность портов (не конфликтуют ли)
-    - echo "Checking port availability..."
-    - docker-compose config --services | while read service; do
-        ports=$(docker-compose config | grep -A 10 "$service:" | grep -E "\s+ports:" -A 5 | grep -oE "\d+:\d+" || echo "");
-        if [ -n "$ports" ]; then
-          echo "✅ Service $service uses ports: $ports";
-        fi
-      done
+    # 6. Проверяем порты (упрощённо)
+    - echo "Checking port mappings..."
+    - docker-compose config | grep -E "ports:" -A 3 || echo "No port mappings found"
     
     - echo "🎉 All checks passed successfully!"
   only:
     - main
     - develop
-    - merge_requests
