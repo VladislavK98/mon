@@ -43,7 +43,7 @@ services:
     ports:
       - "9116:9116"
     volumes:
-#      - ./snmp_exporter/snmp.yml:/etc/snmp_exporter/snmp.yml
+      - ./snmp.yml:/etc/snmp.yml
     restart: unless-stopped
 
   blackbox_exporter:
