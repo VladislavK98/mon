@@ -19,6 +19,7 @@ scrape_configs:
           - 'mail:9182'
         labels:
           environment: 'production'
+
   - job_name: 'snmp'
     static_configs:
       - targets:
@@ -32,10 +33,155 @@ scrape_configs:
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: 172.18.0.1:9116 
+        replacement: 172.18.0.1:9116
+
+  # Мониторинг регистраторов по SNMP
+  - job_name: 'dvr_recorders'
+    scrape_interval: 1m
+    scrape_timeout: 30s
+    static_configs:
+      - targets:
+          - 10.8.10.50  # sklad 1
+          - 10.8.10.100  # sklad 2
+          - 10.8.10.10  # sklad 3
+    metrics_path: /snmp
+    params:
+      module: [dvr_nvr]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: snmp_exporter:9116
+
+
+  - job_name: 'cameras_icmp'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: /probe
+    params:
+      module: [icmp]
+    static_configs:
+      - targets:
+          - 10.8.10.50
+          - 10.8.10.51
+          - 10.8.10.52
+          - 10.8.10.53
+          - 10.8.10.55
+          - 10.8.10.56
+          - 10.8.10.57
+          - 10.8.10.58
+          - 10.8.10.59
+          - 10.8.10.60
+          - 10.8.10.61
+          - 10.8.10.62
+          - 10.8.10.63
+          - 10.8.10.64
+          - 10.8.10.65
+          - 10.8.10.66
+          - 10.8.10.67
+          - 10.8.10.68
+          - 10.8.10.69
+          - 10.8.10.70
+          - 10.8.10.71
+          - 10.8.10.72
+          - 10.8.10.73
+          - 10.8.10.74
+          - 10.8.10.75
+          - 10.8.10.76
+          - 10.8.10.77
+          - 10.8.10.78
+          - 10.8.10.79
+          - 10.8.10.80
+          - 10.8.10.81
+          - 10.8.10.82
+        labels:
+          device_type: 'camera'
+          location: 'Склад 1'
+      - targets:
+          - 10.8.10.101
+          - 10.8.10.102
+          - 10.8.10.103
+          - 10.8.10.104
+          - 10.8.10.105
+          - 10.8.10.106
+          - 10.8.10.131
+          - 10.8.10.108
+          - 10.8.10.109
+          - 10.8.10.110
+          - 10.8.10.111
+          - 10.8.10.112
+          - 10.8.10.54
+          - 10.8.10.114
+          - 10.8.10.115
+          - 10.8.10.2
+          - 10.8.10.117
+          - 10.8.10.118
+          - 10.8.10.119
+          - 10.8.10.120
+          - 10.8.10.121
+          - 10.8.10.132
+          - 10.8.10.123
+          - 10.8.10.124
+          - 10.8.10.125
+          - 10.8.10.126
+          - 10.8.10.127
+          - 10.8.10.128
+          - 10.8.10.129
+          - 10.8.10.133
+          - 10.8.10.130
+          - 10.8.10.205
+        labels:
+          device_type: 'camera'
+          location: 'Склад 2'
+      - targets:
+          - 10.8.10.24
+          - 10.8.10.23
+          - 10.8.10.28
+          - 10.8.10.20
+          - 10.8.10.26
+          - 10.8.10.22
+          - 10.8.10.21
+          - 10.8.10.27
+          - 10.8.10.25
+          - 10.8.10.215
+          - 10.8.10.218
+          - 10.8.10.126
+          - 10.8.10.223
+          - 10.8.10.205
+          - 10.8.10.225
+          - 10.8.10.219
+          - 10.8.10.221
+          - 10.8.10.213
+          - 10.8.10.132
+          - 10.8.10.220
+          - 10.8.10.229
+          - 10.8.10.224
+          - 10.8.10.216
+          - 10.8.10.11
+          - 10.8.10.29
+          - 10.8.10.30
+          - 10.8.10.31
+          - 10.8.10.32
+          - 10.8.10.33
+          - 10.8.10.34
+          - 10.8.10.204
+        labels:
+          device_type: 'camera'
+          location: 'Склад 3'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115
+
   - job_name: 'windows_terminal2_sessions'
     static_configs:
       - targets: ['terminal2:8080']
+
   - job_name: 'windows_terminal_ipku_sessions'
     static_configs:
       - targets: ['terminal_ipku:8080']
@@ -43,7 +189,6 @@ scrape_configs:
   - job_name: 'windows_terminal_rtsz_sessions'
     static_configs:
       - targets: ['terminal-rtsz:8080']
-
 
   - job_name: 'node-exporter'
     static_configs:
@@ -54,15 +199,14 @@ scrape_configs:
           group: 'servers'
           instance: 'main-server'
           os: 'linux'
+
   - job_name: 'bitrix24-online-users'
     scrape_interval: 60s
     scrape_timeout: 30s
     metrics_path: '/'
     static_configs:
-      - targets: ['10.10.10.137:8090']  # Адрес вашего Bash экспортера
+      - targets: ['10.10.10.137:8090']
         labels:
           service: 'bitrix24'
           instance: 'rostherm-crm'
           source: 'bash-exporter'
-
-

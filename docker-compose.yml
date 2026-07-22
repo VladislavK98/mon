@@ -8,7 +8,6 @@ services:
     container_name: prometheus
     hostname: prometheus
     command:
-
       - --config.file=/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
@@ -23,6 +22,7 @@ services:
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/dashboards/windows_exporter_dashboard.json:/var/lib/grafana/dashboards/windows_exporter_dashboard.json
+      - ./grafana/provisioning/dashboards/cameras_dvr_dashboard.json:/var/lib/grafana/dashboards/cameras_dvr_dashboard.json
       - ./grafana/config/grafana.ini:/etc/grafana/grafana.ini
     depends_on:
       - prometheus
@@ -42,10 +42,16 @@ services:
     image: prom/snmp-exporter:v0.22.0
     ports:
       - "9116:9116"
-#    volumes:
-#      - ./snmp.yml:/etc/snmp_exporter/snmp.yml
-#    command:
-#      - --config.file=/etc/snmp_exporter/snmp.yml
+    volumes:
+      - ./snmp_exporter/snmp.yml:/etc/snmp_exporter/snmp.yml
+    restart: unless-stopped
+
+  blackbox_exporter:
+    image: prom/blackbox-exporter:v0.24.0
+    ports:
+      - "9115:9115"
+    volumes:
+      - ./blackbox_exporter/blackbox.yml:/etc/blackbox_exporter/config.yml
     restart: unless-stopped
 
 volumes:

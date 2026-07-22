@@ -1,5 +1,59 @@
-if_mib:
-  walk:
-    - 1.3.6.1.2.1.2
-  version: 2
-  community: public
+modules:
+  # Модуль для мониторинга DVR/NVR регистраторов
+  dvr_nvr:
+    walk:
+      - 1.3.6.1.2.1.1.1.0      # sysDescr
+      - 1.3.6.1.2.1.1.3.0      # sysUpTime
+      - 1.3.6.1.2.1.1.5.0      # sysName
+      - 1.3.6.1.2.1.25.1.1.0   # hrSystemUptime
+      - 1.3.6.1.2.1.25.2.2     # hrStorageTable (диски)
+      - 1.3.6.1.2.1.25.3.3.1.2 # hrProcessorLoad (CPU)
+    metrics:
+      - name: sysUpTime
+        oid: 1.3.6.1.2.1.1.3.0
+        type: gauge
+      - name: sysName
+        oid: 1.3.6.1.2.1.1.5.0
+        type: gauge
+      - name: hrProcessorLoad
+        oid: 1.3.6.1.2.1.25.3.3.1.2
+        type: gauge
+      - name: hrStorageSize
+        oid: 1.3.6.1.2.1.25.2.3.1.5
+        type: gauge
+      - name: hrStorageUsed
+        oid: 1.3.6.1.2.1.25.2.3.1.6
+        type: gauge
+
+  # Модуль для Hikvision устройств
+  hikvision:
+    walk:
+      - 1.3.6.1.2.1.1.1.0      # sysDescr
+      - 1.3.6.1.2.1.1.3.0      # sysUpTime
+      - 1.3.6.1.2.1.1.5.0      # sysName
+      - 1.3.6.1.2.1.2.1.0      # ifNumber (интерфейсы)
+      - 1.3.6.1.2.1.2.2.1.2    # ifDescr
+      - 1.3.6.1.2.1.2.2.1.5    # ifSpeed
+      - 1.3.6.1.2.1.2.2.1.8    # ifOperStatus
+      - 1.3.6.1.2.1.25.1.1.0   # hrSystemUptime
+      - 1.3.6.1.2.1.25.2.2     # hrStorageTable
+      - 1.3.6.1.2.1.25.3.3.1.2 # hrProcessorLoad
+    metrics:
+      - name: sysUpTime
+        oid: 1.3.6.1.2.1.1.3.0
+        type: gauge
+      - name: sysName
+        oid: 1.3.6.1.2.1.1.5.0
+        type: gauge
+      - name: ifOperStatus
+        oid: 1.3.6.1.2.1.2.2.1.8
+        type: gauge
+      - name: hrProcessorLoad
+        oid: 1.3.6.1.2.1.25.3.3.1.2
+        type: gauge
+      - name: hrStorageSize
+        oid: 1.3.6.1.2.1.25.2.3.1.5
+        type: gauge
+      - name: hrStorageUsed
+        oid: 1.3.6.1.2.1.25.2.3.1.6
+        type: gauge
