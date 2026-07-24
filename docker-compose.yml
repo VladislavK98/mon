@@ -24,6 +24,7 @@ services:
       - ./grafana/provisioning/dashboards/windows_exporter_dashboard.json:/var/lib/grafana/dashboards/windows_exporter_dashboard.json
       - ./grafana/provisioning/dashboards/cameras_dvr_dashboard.json:/var/lib/grafana/dashboards/cameras_dvr_dashboard.json
       - ./grafana/config/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning/playlists:/etc/grafana/provisioning/playlists
     depends_on:
       - prometheus
     hostname: grafana
