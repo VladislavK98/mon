@@ -122,7 +122,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "probe_success{job=\"cameras_icmp\", location=\"Прод 4 ТПА\"}",
+          "expr": "probe_success{job=\"cameras_icmp\", location=\"Склад 1\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -132,7 +132,7 @@
           "refId": "A"
         }
       ],
-      "title": "Прод 4 ТПА 10.6.10.10",
+      "title": "Склад 1 10.8.10.50",
       "type": "stat"
     },
     {
@@ -1047,6 +1047,6 @@
   "timezone": "",
   "title": "Камеры",
   "uid": "ce8a352b-6375-4025-81ff-7a9c75767fec",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
