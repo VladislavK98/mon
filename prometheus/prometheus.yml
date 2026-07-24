@@ -379,7 +379,7 @@ scrape_configs:
           - 10.13.10.75
         labels:
           device_type: 'camera'
-          location: 'Скалд МСК'
+          location: 'Склад МСК'
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
