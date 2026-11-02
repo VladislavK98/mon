@@ -32,6 +32,7 @@ services:
       - ./grafana/provisioning/playlists:/etc/grafana/provisioning/playlists
     depends_on:
       - prometheus
+      - loki
     hostname: grafana
     environment:
       - GF_INSTALL_PLUGINS=ddurieux-glpi-app
@@ -52,6 +53,35 @@ services:
       - ./snmp.yml:/etc/snmp.yml
     restart: unless-stopped
 
+  loki:
+    image: grafana/loki:3.4.1
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - loki-data:/loki
+    restart: unless-stopped
+
+  alloy:
+    image: grafana/alloy:latest
+    container_name: alloy
+    hostname: alloy
+    ports:
+      - "12345:12345"
+    volumes:
+      - ./alloy/config.alloy:/etc/alloy/config.alloy:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - alloy-data:/var/lib/alloy/data
+    command:
+      - run
+      - --server.http.listen-addr=0.0.0.0:12345
+      - --storage.path=/var/lib/alloy/data
+      - /etc/alloy/config.alloy
+    depends_on:
+      - loki
+    restart: unless-stopped
+
   blackbox_exporter:
     image: prom/blackbox-exporter:v0.24.0
     ports:
@@ -62,3 +92,5 @@ services:
 
 volumes:
   grafana_data:
+  loki-data:
+  alloy-data:

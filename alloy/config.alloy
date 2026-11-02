@@ -1,0 +1,18 @@
+// Обнаружение всех Docker-контейнеров на хосте
+discovery.docker "containers" {
+  host = "unix:///var/run/docker.sock"
+}
+
+// Сбор логов из найденных контейнеров
+loki.source.docker "docker_logs" {
+  host       = "unix:///var/run/docker.sock"
+  targets    = discovery.docker.containers.targets
+  forward_to = [loki.write.loki.receiver]
+}
+
+// Отправка в Loki по имени сервиса в docker-compose
+loki.write "loki" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}
