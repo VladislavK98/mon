@@ -11,12 +11,17 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    dns:
+      - 10.10.10.15
     restart: unless-stopped
 
   grafana:
     image: grafana/grafana:9.5.1
     ports:
       - "3000:3000"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards

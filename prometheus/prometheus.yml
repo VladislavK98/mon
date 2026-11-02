@@ -5,20 +5,25 @@ scrape_configs:
   - job_name: 'Servers'
     static_configs:
       - targets:
-          - 'terminal-rtsz:9182'
-          - 'terminal2:9182'
-          - 'terminal-rtsz'
+          - 'terminal-rtsz.rost.local:9182'
+          - 'terminal2.rost.local:9182'
           - '10.7.10.66:9182'
-          - 'srv1czup:9182'
-          - 'hv10:9182'
-          - 'db:9182'
-          - 'db2:9182'
-          - 'terminal_ipku:9182'
-          - 'srv1c:9182'
-          - 'srv1cerp:9182'
-          - 'mail:9182'
+          - 'srv1czup.rost.local:9182'
+          - 'hv13.rost.local:9182'
+          - 'db.rost.local:9182'
+          - 'db2.rost.local:9182'
+          - 'terminal_ipku.rost.local:9182'
+          - 'srv1c.rost.local:9182'
+          - 'srv1cerp.rost.local:9182'
+          - 'mail.rost.local:9182'
+          - 'terminal-rost.rost.local:9182'
         labels:
           environment: 'production'
+    relabel_configs:
+      - source_labels: ['__address__']
+        regex: '([^:]+):\d+'
+        target_label: 'instance'
+        replacement: '$1'
 
   - job_name: 'snmp'
     static_configs:
@@ -391,15 +396,19 @@ scrape_configs:
 
   - job_name: 'windows_terminal2_sessions'
     static_configs:
-      - targets: ['terminal2:8080']
+      - targets: ['terminal2.rost.local:8080']
 
   - job_name: 'windows_terminal_ipku_sessions'
     static_configs:
-      - targets: ['terminal_ipku:8080']
+      - targets: ['terminal_ipku.rost.local:8080']
 
   - job_name: 'windows_terminal_rtsz_sessions'
     static_configs:
-      - targets: ['terminal-rtsz:8080']
+      - targets: ['terminal-rtsz.rost.local:8080']
+
+  - job_name: 'windows_terminal_rost_sessions'
+    static_configs:
+      - targets: ['terminal-rost.rost.local:8080']
 
   - job_name: 'node-exporter'
     static_configs:

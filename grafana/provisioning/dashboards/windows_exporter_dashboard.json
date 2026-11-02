@@ -747,7 +747,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 16
       },
@@ -813,8 +813,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
-        "x": 5,
+        "w": 4,
+        "x": 4,
         "y": 16
       },
       "id": 62,
@@ -878,8 +878,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
-        "x": 10,
+        "w": 4,
+        "x": 8,
         "y": 16
       },
       "id": 65,
@@ -912,6 +912,71 @@
         }
       ],
       "title": "(Terminal_rtsz)Статус \"Активно\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 12,
+        "y": 16
+      },
+      "id": 68,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "windows_terminal_rost_sessions_active_sessions",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "(Terminal-rost)Статус \"Активно\"",
       "type": "stat"
     },
     {
@@ -1073,8 +1138,8 @@
       },
       "gridPos": {
         "h": 18,
-        "w": 9,
-        "x": 15,
+        "w": 8,
+        "x": 16,
         "y": 16
       },
       "id": 60,
@@ -1214,7 +1279,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red"
+                "color": "semi-dark-red",
+                "value": null
               }
             ]
           }
@@ -1223,7 +1289,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 25
       },
@@ -1274,7 +1340,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red"
+                "color": "semi-dark-red",
+                "value": null
               }
             ]
           }
@@ -1283,8 +1350,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
-        "x": 5,
+        "w": 4,
+        "x": 4,
         "y": 25
       },
       "id": 63,
@@ -1334,7 +1401,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "semi-dark-red"
+                "color": "semi-dark-red",
+                "value": null
               },
               {
                 "color": "red",
@@ -1347,8 +1415,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 5,
-        "x": 10,
+        "w": 4,
+        "x": 8,
         "y": 25
       },
       "id": 66,
@@ -1373,7 +1441,7 @@
             "type": "prometheus",
             "uid": "PBFF03980003518EA"
           },
-          "editorMode": "builder",
+          "editorMode": "code",
           "expr": "windows_terminal_rtsz_sessions_inactive_sessions",
           "legendFormat": "__auto",
           "range": true,
@@ -1381,6 +1449,67 @@
         }
       ],
       "title": "(Terminal_ipku)Статус \"Диск\"",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 12,
+        "y": 25
+      },
+      "id": 69,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "windows_terminal_rost_sessions_inactive_sessions",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "(Terminal_rost)Статус \"Активно\"",
       "type": "stat"
     },
     {
@@ -1440,7 +1569,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 94
+            "y": 110
           },
           "id": 35,
           "interval": "",
@@ -1528,7 +1657,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 94
+            "y": 110
           },
           "id": 21,
           "links": [],
@@ -1590,7 +1719,7 @@
             "h": 8,
             "w": 5,
             "x": 4,
-            "y": 94
+            "y": 110
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1790,7 +1919,7 @@
             "h": 8,
             "w": 5,
             "x": 9,
-            "y": 94
+            "y": 110
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -1939,7 +2068,7 @@
             "h": 8,
             "w": 5,
             "x": 14,
-            "y": 94
+            "y": 110
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2089,7 +2218,7 @@
             "h": 8,
             "w": 5,
             "x": 19,
-            "y": 94
+            "y": 110
           },
           "hiddenSeries": false,
           "id": 25,
@@ -2211,7 +2340,7 @@
             "h": 4,
             "w": 2,
             "x": 0,
-            "y": 98
+            "y": 114
           },
           "id": 37,
           "interval": "",
@@ -2298,7 +2427,7 @@
             "h": 4,
             "w": 2,
             "x": 2,
-            "y": 98
+            "y": 114
           },
           "id": 19,
           "links": [],
@@ -2354,7 +2483,7 @@
             "h": 9,
             "w": 4,
             "x": 0,
-            "y": 102
+            "y": 118
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2473,7 +2602,7 @@
             "h": 9,
             "w": 5,
             "x": 4,
-            "y": 102
+            "y": 118
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2628,7 +2757,7 @@
             "h": 9,
             "w": 5,
             "x": 9,
-            "y": 102
+            "y": 118
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2781,7 +2910,7 @@
             "h": 9,
             "w": 5,
             "x": 14,
-            "y": 102
+            "y": 118
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -2880,7 +3009,7 @@
             "h": 9,
             "w": 5,
             "x": 19,
-            "y": 102
+            "y": 118
           },
           "hiddenSeries": false,
           "hideTimeOverride": false,
@@ -3065,8 +3194,8 @@
       {
         "current": {
           "selected": false,
-          "text": "db2:9182",
-          "value": "db2:9182"
+          "text": "10.7.10.66",
+          "value": "10.7.10.66"
         },
         "datasource": {
           "type": "prometheus",
@@ -3095,8 +3224,8 @@
       {
         "current": {
           "selected": false,
-          "text": "db2",
-          "value": "db2"
+          "text": "wms",
+          "value": "wms"
         },
         "datasource": {
           "type": "prometheus",
